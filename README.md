@@ -1,7 +1,4 @@
 # ImPRS
-polygenic risk scores
-
-<br>
-
+polygenic risk scores  
 pilot project
  
