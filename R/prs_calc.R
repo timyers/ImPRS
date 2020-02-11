@@ -18,7 +18,8 @@ target_data <- BEDMatrix::BEDMatrix(target_bed)
 #####################################
 
 
-# Primary PRS function
+########### Primary PRS function ###########
+
 prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
   
   # read the 'base' data file
@@ -39,7 +40,27 @@ prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
   
   # Subset 'base_data' with only rsID's and OR(weight)
     base_data_subset <- data.frame(SNP = base_data$SNP, OR = base_data$OR)
-
     
+  # The list of variants in 'base_data_subset' and 'target_data' need
+  # to be the same
+    base_data_subset_match <- base_data_subset[base_data_subset$SNP %in% row.names(target_data),]
+    target_data_match <- target_data[rownames(target_data) %in% as.character(base_data_subset_match$SNP),]
+  # Now we have a matrix, ‘target_data_subset_match’, w/ SNP-score (0, 1 or 2), and
+  # a data.frame, ‘base_data_subset_match’, with the weight (transformed OR),
+  # that have the same list of variants.
     
+  ##### Calculating the PRS #####
+  
+  # Multiply the 'weight' (OR) by the SNP-score (0,1,2)
+    df_product <- data.frame(apply(target_data_match, 
+                                   2, 
+                                   function(x) x * base_data_subset_match$OR
+                                  ),
+                             check.names = FALSE
+                            )
+    
+  # Calculate the PRS for each individual
+    df_prs <- colSums(df_product)
+    
+  return(df_prs)  
 }
