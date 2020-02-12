@@ -23,3 +23,4 @@ LazyData: true
 Imports: 
     BEDMatrix,
     utils
+RoxygenNote: 7.0.2

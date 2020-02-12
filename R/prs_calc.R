@@ -31,7 +31,8 @@
 #' @return a numeric
 #' @export
 #'
-#' @examples prs_calc(base_file = "./data/Height.QC.Transformed", target_bed = "./data/EUR.QC.bed")
+#' @examples 
+#' prs_calc(base_file = "./data/extdat/Height.QC.Transformed", target_bed = "./inst/extdat/EUR.QC.bed")
 prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
   
   # read the 'base' data file
