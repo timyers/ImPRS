@@ -25,7 +25,7 @@
 #' @param base_file path and file name to summary statistics
 #' @param base_header a logical value indicating whether the first row of base_file contains column names, default is TRUE.
 #' @param target_bed path and file name to plink's .bed individual-level genotype-phenotype
-#' file, .bim and .bim files must also be located in the same directory with the same file name,
+#' file, .bim and .fam files must also be located in the same directory with the same file name,
 #' prefix, e.g. EUR.bed, EUR.bim, EUR.fam.
 #'
 #' @return a numeric

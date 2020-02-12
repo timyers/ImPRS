@@ -12,7 +12,7 @@ prs_calc(base_file = NULL, base_header = TRUE, target_bed = NULL)
 \item{base_header}{a logical value indicating whether the first row of base_file contains column names, default is TRUE.}
 
 \item{target_bed}{path and file name to plink's .bed individual-level genotype-phenotype
-file, .bim and .bim files must also be located in the same directory with the same file name,
+file, .bim and .fam files must also be located in the same directory with the same file name,
 prefix, e.g. EUR.bed, EUR.bim, EUR.fam.}
 }
 \value{
