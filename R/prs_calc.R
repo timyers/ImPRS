@@ -3,15 +3,15 @@
 # Dependencies = BEDMatrix package
 #
 
-library(BEDMatrix)
+# library(BEDMatrix)
 
 ####### helper code to delete later
-base_file <- "./data/Height.QC.Transformed_trunc"
-base_header = TRUE
-base_data <- read.table(file = base_file, header = base_header)
+# base_file <- "./data/Height.QC.Transformed_trunc"
+# base_header = TRUE
+# base_data <- read.table(file = base_file, header = base_header)
 
-target_bed <- "./data/EUR.QC.bed"
-target_data <- BEDMatrix::BEDMatrix(target_bed)
+# target_bed <- "./data/EUR.QC.bed"
+# target_data <- BEDMatrix::BEDMatrix(target_bed)
 
 
 
@@ -20,6 +20,19 @@ target_data <- BEDMatrix::BEDMatrix(target_bed)
 
 ########### Primary PRS function ###########
 
+#' Calculate Polygenic Risk Score
+#'
+#' @param base_file path and file name to summary statistics
+#' @param base_header a logical value indicating whether the first row of base_file contains column names, default is TRUE.
+#' @param target_bed path and file name to plink's .bed individual-level genotype-phenotype
+#' file, .bim and .bim files must also be located in the same directory with the same file name,
+#' prefix, e.g. EUR.bed, EUR.bim, EUR.fam.
+#'
+#' @return a numeric
+#' @export
+#'
+#' @examples
+#' prs_calc(base_file = "./data/Height.QC.Transformed", target_bed = "./data/EUR.QC.bed")
 prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
   
   # read the 'base' data file
@@ -64,3 +77,6 @@ prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
     
   return(df_prs)  
 }
+########### End Primary Function ##########
+
+#' @importFrom("utils", "read.table")

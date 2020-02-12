@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-data/EUR.QC.*
-data/Height.QC.*
+inst/extdat/EUR.QC.*
+inst/extdat/Height.QC.*
 
