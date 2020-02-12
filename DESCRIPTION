@@ -1,0 +1,22 @@
+Package: ImPRS
+Title: Calculate Polygenic Risk Scores (PRS)
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Timothy",
+             family = "Myers",
+             role = c("aut", "cre"),
+             email = "first.last@example.com",
+             comment = c(ORCID = "0000-0001-8127-3446"),
+      person(given = "Mitchell J.",
+             family = "Machiela",
+             role = "aut",
+             email = "mitchell.machiela@nih.gov")
+             comment = c(ORCID = "0000-0001-6538-9705")
+     )
+Maintainer: Timothy A. Myers <myersta@mail.nih.gov>
+Description: Calcuate Polygenic Risk Scores (PRS).
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    BEDMatrix

@@ -49,7 +49,7 @@ prs_calc <- function(base_file = NULL, base_header = TRUE, target_bed = NULL) {
   # a data.frame, ‘base_data_subset_match’, with the weight (transformed OR),
   # that have the same list of variants.
     
-  ##### Calculating the PRS #####
+  ##### Calculating PRS #####
   
   # Multiply the 'weight' (OR) by the SNP-score (0,1,2)
     df_product <- data.frame(apply(target_data_match, 
