@@ -5,4 +5,5 @@ pilot project
 **Note:** Currently under development and unstable.   
   
 ## Installation
-devtools::install_github("timyers/ImPRS")
+remotes::install_github("timyers/ImPRS")
+
